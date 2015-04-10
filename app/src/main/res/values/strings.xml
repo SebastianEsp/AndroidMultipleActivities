@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Multiple Activities</string>
+    <string name="title">Main Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_ChangeActivity">Go to second activity</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="activity2_title">Activity 2</string>
+    <string name="activity2_button_back">Back</string>
+</resources>
