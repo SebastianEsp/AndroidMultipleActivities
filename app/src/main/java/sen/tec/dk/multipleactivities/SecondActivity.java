@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -33,8 +30,7 @@ public class SecondActivity extends ActionBarActivity implements View.OnClickLis
         textView_WriteUserInput.setText(userInput);
     }
 
-    @Override
-    public void onClick(View v)
+    private void finishAction()
     {
         Date date = new Date();
         Calendar cal = Calendar.getInstance();
@@ -43,9 +39,21 @@ public class SecondActivity extends ActionBarActivity implements View.OnClickLis
         int minutes = cal.get(Calendar.MINUTE);
         int seconds = cal.get(Calendar.SECOND);
         String time = String.format("The Time is\n%1$02d:%2$02d:%3$02d", hour, minutes, seconds);
-
         intent.putExtra("TextFromSecondActivity", time);
         setResult(Activity.RESULT_OK, intent);
         finish();
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        finishAction();
+    }
+
+    //overrides physical back button functionality
+    @Override
+    public void onBackPressed()
+    {
+        finishAction();
     }
 }
